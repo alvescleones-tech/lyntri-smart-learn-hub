@@ -55,29 +55,18 @@ npx cap run android
 npx cap run ios
 ```
 
-## 🎯 Configurar IDs do AdMob (IMPORTANTE!)
+## ✅ IDs do AdMob Configurados
 
-### Passo 1: Criar conta no Google AdMob
-1. Acesse [AdMob](https://admob.google.com/)
-2. Crie uma conta e registre seu app
-3. Obtenha seus IDs de anúncio
+**App ID:** `ca-app-pub-3733287743092429~4643555264`
+**Unit ID (Edward):** `ca-app-pub-3733287743092429/4614693153`
 
-### Passo 2: Substituir IDs de teste
-Edite o arquivo `src/hooks/useAdMob.tsx` e substitua os IDs:
+Os IDs já estão configurados em:
+- ✅ `src/hooks/useAdMob.tsx` - IDs de anúncio
+- ✅ `android/app/src/main/AndroidManifest.xml` - App ID Android
+- ✅ `ios/App/App/Info.plist` - App ID iOS
+- ✅ Modo de produção ativado (`initializeForTesting: false`)
 
-```typescript
-const AD_IDS = {
-  banner: 'SEU_ID_BANNER_AQUI',
-  interstitial: 'SEU_ID_INTERSTITIAL_AQUI',
-  rewarded: 'SEU_ID_REWARDED_AQUI',
-};
-```
-
-### Passo 3: Desabilitar modo de teste
-No mesmo arquivo, altere:
-```typescript
-initializeForTesting: false, // Mude de true para false
-```
+**Importante:** Se você criar mais unidades de anúncio no AdMob (banner separado, interstitial, rewarded), atualize os IDs específicos em `src/hooks/useAdMob.tsx`.
 
 ## 📲 Como usar os anúncios no seu app
 

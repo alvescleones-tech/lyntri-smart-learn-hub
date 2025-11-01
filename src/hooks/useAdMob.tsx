@@ -6,11 +6,11 @@ export const useAdMob = () => {
   const [isInitialized, setIsInitialized] = useState(false);
   const { toast } = useToast();
 
-  // IDs de teste do AdMob - SUBSTITUA pelos seus IDs reais do AdMob
+  // IDs reais do AdMob
   const AD_IDS = {
-    banner: 'ca-app-pub-3940256099942544/6300978111', // ID de teste
-    interstitial: 'ca-app-pub-3940256099942544/1033173712', // ID de teste
-    rewarded: 'ca-app-pub-3940256099942544/5224046917', // ID de teste
+    banner: 'ca-app-pub-3733287743092429/4614693153', // Edward Banner/Interstitial
+    interstitial: 'ca-app-pub-3733287743092429/4614693153', // Edward
+    rewarded: 'ca-app-pub-3733287743092429/4614693153', // Edward (use IDs separados se tiver)
   };
 
   useEffect(() => {
@@ -20,8 +20,8 @@ export const useAdMob = () => {
   const initializeAdMob = async () => {
     try {
       await AdMob.initialize({
-        testingDevices: ['DEVICE_ID_HERE'], // Adicione seus IDs de dispositivo de teste
-        initializeForTesting: true, // Mude para false em produção
+        testingDevices: [], // Deixe vazio para produção
+        initializeForTesting: false, // Modo produção
       });
       setIsInitialized(true);
       console.log('AdMob inicializado com sucesso');
